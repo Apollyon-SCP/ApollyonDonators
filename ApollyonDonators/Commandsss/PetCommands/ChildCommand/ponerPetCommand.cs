@@ -39,7 +39,7 @@ namespace ApollyonDonators.Commandsss.PetCommands.ChildCommand
                 return false;
             }
 
-            Pet pet = PetSystem.Pets.Where(p => p.PetName == arguments.At(0)).FirstOrDefault();
+            Pet pet = Main.Instance.Config.Pets.Where(p => p.PetName == arguments.At(0)).FirstOrDefault();
             if (pet == null)
             {
                 response = "Esa mascota no existe";

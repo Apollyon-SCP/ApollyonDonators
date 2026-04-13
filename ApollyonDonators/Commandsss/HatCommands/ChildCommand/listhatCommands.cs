@@ -26,7 +26,7 @@ namespace ApollyonDonators.Commandsss.HatCommands.ChildCommand
                 return false;
             }
 
-            List<string> hats = HatSystem.HatSystem.hats.Select(h => h.Hatname).ToList();
+            List<string> hats = Main.Instance.Config.hats.Select(h => h.Hatname).ToList();
 
             response = string.Join("\n ", hats);
             return true;

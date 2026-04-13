@@ -27,7 +27,7 @@ namespace ApollyonDonators.Commandsss.PetCommands.ChildCommand
                 return false;
             }
 
-            List<string> pets = PetSystem.Pets.Select(p => p.PetName).ToList();
+            List<string> pets = Main.Instance.Config.Pets.Select(p => p.PetName).ToList();
 
             response = string.Join("\n ", pets);
             return true;

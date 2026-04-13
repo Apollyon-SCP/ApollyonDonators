@@ -91,7 +91,9 @@
     <Compile Include="Commandsss\PetCommands\ChildCommand\ponerPetCommand.cs" />
     <Compile Include="Commandsss\PetCommands\ChildCommand\quitarPetCommand.cs" />
     <Compile Include="Commandsss\PetCommands\ParentPetCommand.cs" />
+    <Compile Include="Commandsss\scaleCommand.cs" />
     <Compile Include="Commandsss\setNickNameCommand.cs" />
+    <Compile Include="config.cs" />
     <Compile Include="eventHandler.cs" />
     <Compile Include="HatSystem\Hat.cs" />
     <Compile Include="HatSystem\HatSystem.cs" />

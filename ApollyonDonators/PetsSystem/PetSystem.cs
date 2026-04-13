@@ -28,60 +28,7 @@ namespace ApollyonDonators.PetsSystem
         public static Dictionary<uint, HashSet<int>> KnownAppearances = new Dictionary<uint, HashSet<int>>();
         public static Dictionary<string, Pet> _pets = new Dictionary<string, Pet>();
         public static Dictionary<string, ReferenceHub> PlayePets = new Dictionary<string, ReferenceHub>();
-        public static List<Pet> Pets { get; set; } = new List<Pet>() 
-        { 
-            new Pet
-            {
-                PetName = "dog",
-                PetRole = RoleTypeId.Scp939,
-                IsPetVisibleForOwner = true,
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Pet
-            {
-                PetName = "peste",
-                PetRole = RoleTypeId.Scp049,
-                IsPetVisibleForOwner = true,
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Pet
-            {
-                PetName = "negrito",
-                PetRole = RoleTypeId.Scp106,
-                IsPetVisibleForOwner = true,
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Pet
-            {
-                PetName = "zombidito",
-                PetRole = RoleTypeId.Scp0492,
-                IsPetVisibleForOwner = true,
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Pet
-            {
-                PetName = "peanut",
-                PetRole = RoleTypeId.Scp173,
-                IsPetVisibleForOwner = true,
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Pet
-            {
-                PetName = "chungus",
-                PetRole = RoleTypeId.Scp096,
-                IsPetVisibleForOwner = true,
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Pet
-            {
-                PetName = "chispitas",
-                PetRole = RoleTypeId.Tutorial,
-                SchematicName = "Sparky",
-                SchematicScale = new UnityEngine.Vector3(1f, 1f, 1f),
-                IsPetVisibleForOwner = true,
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            }
-        };
+
 
         public static void SpawnPetForPlayer(Player player, Pet pet)
         {

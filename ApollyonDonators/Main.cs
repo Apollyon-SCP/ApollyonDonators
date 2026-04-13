@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ApollyonDonators
 {
-    public class Main : Plugin
+    public class Main : Plugin<config>
     {
         public override string Name => "Donator_Plugin";
 
@@ -21,9 +21,12 @@ namespace ApollyonDonators
         public override Version RequiredApiVersion => LabApiProperties.CurrentVersion;
 
         public eventHandler eventHandler { get; set; }
+        
+        public static Main Instance { get; set; }
 
         public override void Enable()
         {
+            Instance = this;
             eventHandler = new eventHandler();
             LabApi.Events.Handlers.PlayerEvents.Left += eventHandler.OnPlayerLeft;
             LabApi.Events.Handlers.PlayerEvents.Death += eventHandler.OnPlayerDied;
@@ -36,6 +39,7 @@ namespace ApollyonDonators
             LabApi.Events.Handlers.PlayerEvents.Death -= eventHandler.OnPlayerDied;
             LabApi.Events.Handlers.PlayerEvents.Left -= eventHandler.OnPlayerLeft;
             eventHandler = null;
+            Instance = null;
         }
     }
 }

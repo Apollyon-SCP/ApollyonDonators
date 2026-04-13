@@ -39,7 +39,7 @@ namespace ApollyonDonators.Commandsss.HatCommands.ChildCommand
                 return false;
             }
 
-            Hat hat = HatSystem.HatSystem.hats.Where(p => p.Hatname == arguments.At(0)).FirstOrDefault();
+            Hat hat = Main.Instance.Config.hats.Where(p => p.Hatname == arguments.At(0)).FirstOrDefault();
             if (hat == null)
             {
                 response = "Ese gorro no existe";

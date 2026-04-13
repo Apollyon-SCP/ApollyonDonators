@@ -11,55 +11,6 @@ namespace ApollyonDonators.HatSystem
         public static readonly Dictionary<string, SchematicObject> _hats = new Dictionary<string, SchematicObject>();
         public static readonly Dictionary<string, SchematicObject> _DummysHat = new Dictionary<string, SchematicObject>();
 
-        public static List<Hat> hats = new List<Hat>() 
-        {
-            new Hat
-            {
-                Hatname = "frog",
-                SchematicName = "Frog",
-                IsSchematicVisibleForOwner = true,
-                Offset = new Vector3(0, 0.55f, 0),
-                Rotation = new Quaternion(0, 180, 0, 0),
-                Scale = new Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Hat
-            {
-                Hatname = "horns",
-                SchematicName = "Horns",
-                IsSchematicVisibleForOwner = false,
-                Offset = new UnityEngine.Vector3(0, 0.55f, 0),
-                Rotation = new UnityEngine.Quaternion(0, 90, 0, 0),
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Hat
-            {
-                Hatname = "policehat",
-                SchematicName = "PoliceHat",
-                IsSchematicVisibleForOwner = true,
-                Offset = new UnityEngine.Vector3(0, 0.55f, 0),
-                Rotation = new UnityEngine.Quaternion(0, 0, 0, 0),
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Hat
-            {
-                Hatname = "chefhat2",
-                SchematicName = "ChefHat2",
-                IsSchematicVisibleForOwner = true,
-                Offset = new UnityEngine.Vector3(0f, 1f, -0.05f),
-                Rotation = new UnityEngine.Quaternion(0, 0, 90, 0),
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            },
-            new Hat
-            {
-                Hatname = "chefhat",
-                SchematicName = "ChefHat",
-                IsSchematicVisibleForOwner = true,
-                Offset = new UnityEngine.Vector3(0f, 0.55f, -0.1f),
-                Rotation = new UnityEngine.Quaternion(0, 0, 0, 0),
-                Scale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f)
-            }
-        };
-
         public static void AddHatToPlayer(Player player, Hat hat)
         {
             var hatOb = SpawnSchematic(hat);
@@ -123,6 +74,11 @@ namespace ApollyonDonators.HatSystem
                 config.Rotation,
                 config.Scale
             );
+        }
+
+        public static bool PlayerHaveHat(Player player)
+        {
+            return _hats.ContainsKey(player.UserId);
         }
     }
 }
