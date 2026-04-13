@@ -20,7 +20,7 @@ namespace ApollyonDonators.Commandsss.HatCommands.ChildCommand
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasAnyPermission("donatortier2.hat.poner"))
+            if (!player.HasPermissions("donatortier2.hatponer"))
             {
                 response = "No tienes permitido poner gorros, no eres donador";
                 return false;
@@ -32,9 +32,8 @@ namespace ApollyonDonators.Commandsss.HatCommands.ChildCommand
                 return false;
             }
 
-            var playerhat = HatSystem.HatSystem._hats.Where(p => p.Key == player.UserId);
-
-            if (playerhat == null)
+            var playerhat = HatSystem.HatSystem._hats.Any(p => p.Key == player.UserId);
+            if (playerhat)
             {
                 response = "Tienes que quitarte el gorro para ponerte otro";
                 return false;

@@ -1,12 +1,17 @@
-﻿using CommandSystem;
+﻿using ApollyonDonators.PetsSystem;
+using CommandSystem;
 using LabApi.Features.Permissions;
 using LabApi.Features.Wrappers;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ApollyonDonators.Commandsss.HatCommands.ChildCommand
+namespace ApollyonDonators.Commandsss.PetCommands.ChildCommand
 {
-    [CommandHandler(typeof(ParentHatCommand))]
-    public class quitarHatCommand : ICommand
+    [CommandHandler(typeof(ParentPetCommand))]
+    public class quitarPetCommand : ICommand
     {
         public string Command => "quitar";
 
@@ -18,15 +23,15 @@ namespace ApollyonDonators.Commandsss.HatCommands.ChildCommand
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasPermissions("donatortier2.hatquitar"))
+            if (!player.HasPermissions("donatortier2.petquitar"))
             {
                 response = "No tienes permitido poner quitarte un gorro, no eres donador";
                 return false;
             }
 
-            HatSystem.HatSystem.RemoveHatFromPlayer(player);
+            PetSystem.RemovePetFromPlayer(player);
 
-            response = "gorro quitado";
+            response = "mascota quitada";
             return true;
         }
     }

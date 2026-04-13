@@ -30,13 +30,13 @@ namespace ApollyonDonators.Commandsss.HatCommands
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasAnyPermission("donatortier2.hat"))
+            if (!player.HasPermissions("donatortier2.hat"))
             {
                 response = "No tienes permiso para ejecutar este comando, dona al server";
                 return false;
             }
 
-            response = ".gorro <lista/poner <Nombre del gorro>/remover>";
+            response = ".gorro <lista/poner <Nombre del gorro>/quitar>";
             return true;
         }
     }

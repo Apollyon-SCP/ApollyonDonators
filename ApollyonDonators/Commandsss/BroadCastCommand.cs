@@ -26,7 +26,7 @@ namespace ApollyonDonators.Commandsss
                 return false;
             }
 
-            if (!player.HasAnyPermission("DonadorTier2.bc"))
+            if (!player.HasPermissions("donatortier2.bc"))
             {
                 response = "No tienes permiso para usar este comando, Dona al server!";
                 return false;

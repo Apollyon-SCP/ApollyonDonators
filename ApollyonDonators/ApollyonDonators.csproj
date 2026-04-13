@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <LangVersion>latest</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{860AB68B-B420-4848-A4FC-84BB6F25448E}</ProjectGuid>
@@ -46,6 +47,13 @@
     <Reference Include="Mirror">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.dll</HintPath>
     </Reference>
+    <Reference Include="Mirror.Components">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Pooling, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Pooling.dll</HintPath>
+    </Reference>
     <Reference Include="ProjectMER ">
       <HintPath>..\..\..\..\AppData\Roaming\SCP Secret Laboratory\LabAPI\plugins\global\ProjectMER .dll</HintPath>
     </Reference>
@@ -76,11 +84,16 @@
     <Compile Include="Commandsss\HatCommands\ChildCommand\ponerhatCommand.cs" />
     <Compile Include="Commandsss\HatCommands\ChildCommand\quitarHatCommand.cs" />
     <Compile Include="Commandsss\HatCommands\ParentHatCommand.cs" />
+    <Compile Include="Commandsss\PetCommands\ChildCommand\ListPetsCommand.cs" />
+    <Compile Include="Commandsss\PetCommands\ChildCommand\ponerPetCommand.cs" />
+    <Compile Include="Commandsss\PetCommands\ChildCommand\quitarPetCommand.cs" />
+    <Compile Include="Commandsss\PetCommands\ParentPetCommand.cs" />
     <Compile Include="Commandsss\setNickNameCommand.cs" />
     <Compile Include="HatSystem\Hat.cs" />
     <Compile Include="HatSystem\HatSystem.cs" />
-    <Compile Include="HatSystem\HatVisibility.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="PetsSystem\Pet.cs" />
+    <Compile Include="PetsSystem\PetSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
