@@ -253,8 +253,6 @@ namespace ApollyonDonators.PetsSystem
             KnownAppearances.Remove(npcNetId);
         }
 
-
-
         public static void RemovePetFromPlayer(Player player)
         {
             if (PlayePets.TryGetValue(player.UserId, out ReferenceHub mascota))
@@ -272,6 +270,11 @@ namespace ApollyonDonators.PetsSystem
             }
 
             HatSystem.HatSystem.RemoveHatFromPet(player);
+        }
+
+        public static bool PlayerHavePet(Player player)
+        {
+            return PlayePets.ContainsKey(player.UserId);
         }
     }
 }

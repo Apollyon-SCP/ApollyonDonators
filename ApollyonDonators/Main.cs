@@ -20,14 +20,20 @@ namespace ApollyonDonators
 
         public override Version RequiredApiVersion => LabApiProperties.CurrentVersion;
 
+        public eventHandler eventHandler { get; set; }
+
         public override void Enable()
         {
-            
+            eventHandler = new eventHandler();
+            LabApi.Events.Handlers.PlayerEvents.Left += eventHandler.OnPlayerLeft;
+            LabApi.Events.Handlers.PlayerEvents.Death += eventHandler.OnPlayerDied;
         }
 
         public override void Disable()
         {
-            
+            LabApi.Events.Handlers.PlayerEvents.Death -= eventHandler.OnPlayerDied;
+            LabApi.Events.Handlers.PlayerEvents.Left -= eventHandler.OnPlayerLeft;
+            eventHandler = null;
         }
     }
 }
