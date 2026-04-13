@@ -27,10 +27,12 @@ namespace ApollyonDonators
             eventHandler = new eventHandler();
             LabApi.Events.Handlers.PlayerEvents.Left += eventHandler.OnPlayerLeft;
             LabApi.Events.Handlers.PlayerEvents.Death += eventHandler.OnPlayerDied;
+            LabApi.Events.Handlers.ServerEvents.RoundEndingConditionsCheck += eventHandler.OnRoundEndingCheck;
         }
 
         public override void Disable()
         {
+            LabApi.Events.Handlers.ServerEvents.RoundEndingConditionsCheck -= eventHandler.OnRoundEndingCheck;
             LabApi.Events.Handlers.PlayerEvents.Death -= eventHandler.OnPlayerDied;
             LabApi.Events.Handlers.PlayerEvents.Left -= eventHandler.OnPlayerLeft;
             eventHandler = null;
