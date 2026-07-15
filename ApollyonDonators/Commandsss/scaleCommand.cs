@@ -30,7 +30,7 @@ namespace ApollyonDonators.Commandsss
                 return false;
             }
 
-            if (!player.HasAnyPermission("donatortier1.scale"))
+            if (!player.HasAnyPermission("donator.scale"))
             {
                 response = "No tienes permiso para usar este comando, Dona al server!";
                 return false;

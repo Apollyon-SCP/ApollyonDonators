@@ -21,7 +21,7 @@ namespace ApollyonDonators.Commandsss.PetCommands.ChildCommand
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasPermissions("donatortier2.petlist"))
+            if (!player.HasPermissions("donator.petlist"))
             {
                 response = "No tienes permitido ver la lista de mascotas, no eres donador";
                 return false;

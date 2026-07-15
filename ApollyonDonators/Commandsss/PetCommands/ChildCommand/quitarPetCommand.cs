@@ -23,7 +23,7 @@ namespace ApollyonDonators.Commandsss.PetCommands.ChildCommand
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasPermissions("donatortier2.petquitar"))
+            if (!player.HasPermissions("donator.petquitar"))
             {
                 response = "No tienes permitido poner quitarte un gorro, no eres donador";
                 return false;

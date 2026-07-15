@@ -20,7 +20,7 @@ namespace ApollyonDonators.Commandsss.PetCommands.ChildCommand
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasPermissions("donatortier2.petponer"))
+            if (!player.HasPermissions("donator.petponer"))
             {
                 response = "No tienes permitido poner mascotas, no eres donador";
                 return false;

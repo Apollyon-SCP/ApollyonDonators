@@ -25,7 +25,7 @@ namespace ApollyonDonators.Commandsss.PetCommands
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasPermissions("donatortier2.pet"))
+            if (!player.HasPermissions("donator.pet"))
             {
                 response = "No tienes permiso para ejecutar este comando, dona al server";
                 return false;

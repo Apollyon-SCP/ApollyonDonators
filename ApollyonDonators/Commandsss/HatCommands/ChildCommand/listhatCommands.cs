@@ -20,7 +20,7 @@ namespace ApollyonDonators.Commandsss.HatCommands.ChildCommand
         {
             Player player = Player.Get(sender);
 
-            if (!player.HasPermissions("donatortier2.hatlist"))
+            if (!player.HasPermissions("donator.hatlist"))
             {
                 response = "No tienes permitido ver la lista de gorros, no eres donador";
                 return false;
